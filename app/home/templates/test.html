@@ -7,7 +7,7 @@
 {% endblock stylesheets %}
 
 {% block content %}
-  <div class="right_col" role="main">
+  <div class="right_col" role="main" onload="processJavascript();">
     <!-- top tiles -->
     <div class="row tile_count">
       <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
@@ -25,14 +25,10 @@
 
           <div class="row x_title">
             <div class="col-md-6">
-              <h3>Test <small>테스트중입니다.</small></h3>
+              <h3 id="test1">test해보자 <small>테스트중입니다.</small></h3>
             </div>
             
           </div>
-
-          
-
-         
 
           <div class="clearfix"></div>
         </div>
@@ -45,7 +41,11 @@
   </div>
   <script>
     var result = new Date().toString();
-    var appInventorInput = window.AppInventor.getWebViewString();
+    var appInventorInput = window.AppInventor.getWebViewString();   
+    el.textContent = "Hello bunny!!"
+    alert(appInventorInput)  
+    el = document.querySelector('test1')    
+    
         function processJavascript() {
         if (appInventorInput.length > 0) {
             document.write( "WebView InputString received FROM app:" + appInventorInput );
